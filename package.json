@@ -1,0 +1,32 @@
+{
+  "name": "notebackend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node index.js",
+    "dev": "cross-env NODE_ENV=development nodemon index.js",
+    "test": "cross-env  NODE_ENV=test node --test",
+    "build:ui": "rm -rf dist && cd ../FullStackOpen/part2/playground && npm run build && cp -r dist ../../../PhonebookBackend",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push",
+    "logs:prod": "fly logs",
+    "lint": "eslint ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.1",
+    "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
+    "mongoose": "^8.1.1"
+  },
+  "devDependencies": {
+    "@flydotio/dockerfile": "^0.5.0",
+    "@stylistic/eslint-plugin-js": "^1.6.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.56.0",
+    "nodemon": "^3.0.3",
+    "supertest": "^7.0.0"
+  }
+}
