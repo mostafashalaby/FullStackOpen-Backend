@@ -10,7 +10,8 @@
     "build:ui": "rm -rf dist && cd ../FullStackOpen/part2/playground && npm run build && cp -r dist ../../../FullStackOpen-Backend",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push",
     "logs:prod": "fly logs",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "start:test": "cross-env NODE_ENV=test node index.js"
   },
   "author": "",
   "license": "ISC",
